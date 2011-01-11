@@ -1,5 +1,7 @@
 module Rubytracer
   class Sphere
+    attr_reader :material
+
     def initialize(center, radius, material)
       @center = center
       @radius = radius
