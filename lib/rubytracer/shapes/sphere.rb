@@ -1,9 +1,9 @@
 module RubyTracer
   class Sphere
-    def initialize(center, radius, colour)
+    def initialize(center, radius, material)
       @center = center
       @radius = radius
-      @colour = colour
+      @material = material
     end
 
     def normal(point)
