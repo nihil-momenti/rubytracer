@@ -4,7 +4,7 @@ require "rubytracer/version"
 
 Gem::Specification.new do |s|
   s.name        = "rubytracer"
-  s.version     = RubyTracer::VERSION
+  s.version     = Rubytracer::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Nemo157 (Wim Looman)"]
   s.email       = ["ghostunderscore@gmail.com"]

@@ -1,3 +1,3 @@
-module RubyTracer
+module Rubytracer
   VERSION = "0.0.1"
 end

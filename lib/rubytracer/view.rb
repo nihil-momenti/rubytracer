@@ -18,7 +18,7 @@ module Raytracer
       dy = @y_vector * (row + 0.5)
       dx = @x_vector * (col + 0.5)
       point = @top_left + dy + dx
-      Geom3::Ray.new(@point, point - @point)
+      Geom3d::Ray.new(@point, point - @point)
     end
   end
 end   
