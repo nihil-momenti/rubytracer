@@ -16,8 +16,13 @@ module Rubytracer
       Colour.new(@r + other.r, @g + other.g, @b + other.b)
     end
 
-    def * scale
-      Colour.new(@r * scale, @g * scale, @b * scale)
+    def * other
+      case other
+      when Colour
+        Colour.new(@r * other.r, @g * other.g, @b * other.b)
+      else
+        Colour.new(@r * scale, @g * scale, @b * scale)
+      end
     end
 
     def ** power
