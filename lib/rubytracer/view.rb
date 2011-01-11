@@ -1,6 +1,6 @@
 require 'geom3d'
 
-module Raytracer
+module Rubytracer
   class View
     def initialize(view_point, look_at_point, view_up, h_fov, height, width, multi)
       view_direction = (look_at_point - view_point).unit

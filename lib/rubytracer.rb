@@ -9,7 +9,3 @@
 }.each do |file|
   require file
 end
-
-module RubyTracer
-
-end 
