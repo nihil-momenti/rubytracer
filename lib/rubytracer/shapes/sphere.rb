@@ -12,11 +12,11 @@ module Rubytracer
 
     def intersect(ray)
       q = @center - ray.start
-      v_dot_q = ray.dir.dot q 
-      square_diffs = q.dot q - @radius ** 2
+      v_dot_q = ray.dir.dot(q)
+      square_diffs = q.dot(q) - @radius ** 2
       discrim = v_dot_q ** 2 - square_diffs
       if discrim >= 0
-        root = Math.sqrt discrim
+        root = Math.sqrt(discrim)
         t0 = v_dot_q - root
         t1 = v_dot_q + root
         [t0, t1]
