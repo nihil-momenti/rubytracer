@@ -4,8 +4,8 @@
   rubytracer/camera
   rubytracer/colour
   rubytracer/material
-  rubytracer/shapes/sphere
-  rubytracer/lights/ambient
+  rubytracer/shapes
+  rubytracer/lights
 }.each do |file|
   require file
 end
