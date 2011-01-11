@@ -5,7 +5,7 @@ module Rubytracer
     def initialize(view_point, look_at_point, view_up, h_fov, height, width, multi)
       view_direction = (look_at_point - view_point).unit
       view_up = view_up - view_direction * view_up.dot(view_direction)
-      spacing = 2 * Math.tan(h_fov * Math.pi / 360) / width
+      spacing = 2 * Math.tan(h_fov * Math::PI / 360) / width
 
       @point = view_point
       @multi = multi
