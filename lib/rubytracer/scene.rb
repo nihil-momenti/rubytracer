@@ -14,7 +14,7 @@ module Rubytracer
     end
 
     def intersect(ray)
-      min = [nil, INFINITY]
+      min = [nil, Float::INFINITY]
       @objects.map { |object| object.intersect(ray)[0] }.each do |intersection|
         min = intersection if intersection[1] > 0 && intersection[1] < min[1]
       end

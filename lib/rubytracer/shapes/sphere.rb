@@ -21,7 +21,7 @@ module Rubytracer
         t1 = v_dot_q + root
         [t0, t1]
       else
-        [INFINITY, -INFINITY] # May not be portable
+        [Float::INFINITY, -Float::INFINITY] # May not be portable
       end
     end
   end

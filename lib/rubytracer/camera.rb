@@ -8,7 +8,7 @@ module Rubytracer
     def colour_of_pixel(row, col)
       ray = @view.eye_ray(row, col)
       obj, t = @scene.intersect(ray)
-      if t == INFINITY
+      if t == Float::INFINITY
         Colour.new(0.6,0.6,0.6)
       else
         pos = ray.pos(t)
