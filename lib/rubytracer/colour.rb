@@ -33,6 +33,10 @@ module Rubytracer
     def -@
       Colour.new(-@r, -@g, -@b)
     end
+
+    def to_int
+      [[[0, @r * 256].max, 255].min, [[0, @g * 256].max, 255].min, [[0, @b * 256].max, 255].min]
+    end
   end
 end
 
