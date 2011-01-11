@@ -29,12 +29,12 @@ module Rubytracer
     end
 
     def diffuse(point, normal, scene, light)
-      self.diffuse_colour(point, normal) * light.diffuse_lighting(normal, point, scene)
+      self.diffuse_colour(point, normal) * light.diffuse(normal, point, scene)
     end
 
     def specular(point, normal, scene, view_vector, light)
       if @shininess
-        self.specular_colour(point, normal) * (light.specular_lighting(normal, view_vector, point, scene) ** @shininess)
+        self.specular_colour(point, normal) * (light.specular(normal, view_vector, point, scene) ** @shininess)
       else
         Colour.new(0,0,0)
       end
