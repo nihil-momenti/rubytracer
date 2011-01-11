@@ -1,8 +1,10 @@
 module Rubytracer
   class Scene
-    def initialize objects=[], lights=[]
+    attr_reader :lighting
+
+    def initialize(objects=[], lighting=[])
       @objects = objects
-      @lights = lights
+      @lighting = lighting
     end
 
     def add_object(object)
@@ -10,7 +12,7 @@ module Rubytracer
     end
 
     def add_light(light)
-      @lights << light
+      @lighting << light
     end
 
     def intersect(ray)
