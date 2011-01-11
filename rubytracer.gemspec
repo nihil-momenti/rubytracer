@@ -20,9 +20,8 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.required_ruby_version = '>1.9.2'
-
-  s.add_runtime_dependency 'geom3d', '~>0.01'
+  # Ignored until I get it on rubygems, you will need to add it your own Gemfile
+  #s.add_runtime_dependency 'geom3d'
 
   s.add_development_dependency 'rspec', '~>2.3.0'
 end
