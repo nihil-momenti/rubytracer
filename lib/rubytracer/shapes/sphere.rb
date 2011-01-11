@@ -1,4 +1,4 @@
-module RubyTracer
+module Rubytracer
   class Sphere
     def initialize(center, radius, material)
       @center = center
