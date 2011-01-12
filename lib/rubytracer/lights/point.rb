@@ -2,7 +2,7 @@ require 'geom3d'
 
 module Rubytracer
   class PointLight
-    def intialize(value, point)
+    def initialize(value, point)
       @value = value
       @point = point
     end
