@@ -31,7 +31,7 @@ module Rubytracer
       end
 
       def to_hash
-        ['Sphere', { :center => @center.to_hash, :radius => @radius.to_hash, :material => @material.to_hash }]
+        ['Sphere', { :center => @center.to_hash, :radius => @radius, :material => @material.to_hash }]
       end
 
       def self.from_hash hash
