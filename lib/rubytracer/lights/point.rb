@@ -2,13 +2,13 @@ require 'geom3d'
 
 module Rubytracer
   class PointLight
-    def intialize(value, point)
+    def initialize(value, point)
       @value = value
       @point = point
     end
 
     def check_shadow(point, direction, distance, scene)
-      ray = Ray.new(point + direction * 0.00001, direction)
+      ray = Geom3d::Ray.new(point + direction * 0.00001, direction)
       obj, alpha = scene.intersect(ray)
       pos = ray.pos(alpha)
       alpha < distance

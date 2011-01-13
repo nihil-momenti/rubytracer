@@ -21,7 +21,7 @@ module Rubytracer
       when Colour
         Colour.new(@r * other.r, @g * other.g, @b * other.b)
       else
-        Colour.new(@r * scale, @g * scale, @b * scale)
+        Colour.new(@r * other, @g * other, @b * other)
       end
     end
 
