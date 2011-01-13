@@ -45,9 +45,9 @@ module Rubytracer
     end
 
     def self.from_hash hash
-      d_colour = Colour.from_hash(hash[d_colour])
-      s_colour = Colour.from_hash(hash[s_colour])
-      Material.new(:diffuse_colour => d_colour, :specular_colour => s_colour, :shininess => hash[shininess])
+      d_colour = Colour.from_hash(hash[:d_colour])
+      s_colour = Colour.from_hash(hash[:s_colour])
+      Material.new(:diffuse_colour => d_colour, :specular_colour => s_colour, :shininess => hash[:shininess])
     end
   end
 end
