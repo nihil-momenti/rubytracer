@@ -1,9 +1,3 @@
-%w{
-  rubytracer/shapes/sphere
-}.each do |file|
-  require file
-end
-
 module Rubytracer
   module Shapes
     def self.add name, klass
@@ -21,3 +15,8 @@ module Rubytracer
   end
 end
 
+%w{
+  rubytracer/shapes/sphere
+}.each do |file|
+  require file
+end

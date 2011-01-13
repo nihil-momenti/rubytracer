@@ -1,10 +1,3 @@
-%w{
-  rubytracer/lights/ambient
-  rubytracer/lights/point
-}.each do |file|
-  require file
-end
-
 module Rubytracer
   module Lights
     def self.add name, klass
@@ -20,4 +13,11 @@ module Rubytracer
       self[name].from_hash(o)
     end
   end
+end
+
+%w{
+  rubytracer/lights/ambient
+  rubytracer/lights/point
+}.each do |file|
+  require file
 end
