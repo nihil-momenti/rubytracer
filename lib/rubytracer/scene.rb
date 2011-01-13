@@ -22,5 +22,15 @@ module Rubytracer
       end
       min
     end
+
+    def to_hash
+      { :objects => @objects.map { |o| o.to_hash }, :lighting => @lighting.map { |o| o.to_hash } }
+    end
+
+    def self.from_hash hash
+      objects = hash[:objects].map { |o| Shapes.from_hash(o) }
+      lighting = hash[:lighting].map { |o| Lights.from_hash(o) }
+      Scene.new(objects, lighting)
+    end
   end
 end

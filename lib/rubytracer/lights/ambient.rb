@@ -1,17 +1,30 @@
 require 'rubytracer/colour'
 
 module Rubytracer
-  class AmbientLight
-    def initialize value
-      @value = value
-    end
+  module Lights
+    class Ambient
+      Lights.add('Ambient', self)
 
-    def specular(normal, view_vector, point, scene)
-      return Colour.new(0,0,0)
-    end
+      def initialize value
+        @value = value
+      end
+  
+      def specular(normal, view_vector, point, scene)
+        return Colour.new(0,0,0)
+      end
+  
+      def diffuse(normal, point, scene)
+        return @value
+      end
 
-    def diffuse(normal, point, scene)
-      return @value
+      def to_hash
+        ['Ambient', { :value => @value.to_hash }]
+      end
+
+      def self.from_hash hash
+        colour = Colour.from_hash(hash[:value])
+        Ambient.new(colour)
+      end
     end
   end
 end

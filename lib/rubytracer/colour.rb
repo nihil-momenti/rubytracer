@@ -44,6 +44,14 @@ module Rubytracer
     def to_int
       [[[0, @r * 256].max, 255].min, [[0, @g * 256].max, 255].min, [[0, @b * 256].max, 255].min]
     end
+
+    def to_hash
+      { :r => @r, :g => @g, :b => @b }
+    end
+
+    def self.from_hash hash
+      Colour.new(hash[:r], hash[:g], hash[:b])
+    end
   end
 end
 
