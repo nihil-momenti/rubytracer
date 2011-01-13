@@ -38,7 +38,7 @@ module Rubytracer
         center = Point.from_hash(hash[:center])
         radius = hash[:radius]
         material = Material.from_hash(hash[:material])
-        Spere.new(center, radius, material)
+        Sphere.new(center, radius, material)
       end
     end
   end
