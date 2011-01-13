@@ -3,15 +3,11 @@ require 'geom3d'
 module Rubytracer
   class View
     def initialize(point, multi, y_vector, x_vector, top_left)
-      view_direction = (look_at_point - view_point).unit
-      view_up = view_up - view_direction * view_up.dot(view_direction)
-      spacing = 2 * Math.tan(h_fov * Math::PI / 360) / width
-
-      @point = view_point
+      @point = point
       @multi = multi
-      @y_vector = -spacing * view_up.unit
-      @x_vector = spacing * view_up.unit.cross(view_direction.unit).unit
-      @top_left = (view_point + view_direction) - (@y_vector * height / 2  + @x_vector * width / 2)
+      @y_vector = y_vector
+      @x_vector = x_vector
+      @top_left = top_left
     end
 
     def self.create(view_point, look_at_point, view_up, h_fov, height, width, multi)
@@ -23,7 +19,7 @@ module Rubytracer
       multi = multi
       y_vector = -spacing * view_up.unit
       x_vector = spacing * view_up.unit.cross(view_direction.unit).unit
-      top_left = (view_point + view_direction) - (@y_vector * height / 2  + @x_vector * width / 2)
+      top_left = (view_point + view_direction) - (y_vector * height / 2  + x_vector * width / 2)
       View.new(point, multi, y_vector, x_vector, top_left)
     end
 
