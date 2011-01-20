@@ -4,7 +4,7 @@ module Rubytracer
   class View
     attr_reader :height, :width
 
-    def initialize(point, multi, y_vector, x_vector, top_left, height, width)
+    def initialize(point, multi, y_vector, x_vector, top_left, height, widthi, scene)
       @point = point
       @multi = multi
       @y_vector = y_vector
